@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="Soomac_Prototype" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Soomac_Prototype_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Soomac_Prototype_description)/urdf/Soomac_Prototype.trans" />
+<xacro:include filename="$(find Soomac_Prototype_description)/urdf/Soomac_Prototype.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="1.3820185154494553e-05 -0.0005045956311069095 0.018622282272331883" rpy="0 0 0"/>
+    <mass value="1.5026706265949556"/>
+    <inertia ixx="0.000984" iyy="0.000985" izz="0.001544" ixy="0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+

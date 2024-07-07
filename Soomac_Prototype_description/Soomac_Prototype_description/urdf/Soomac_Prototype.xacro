@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="Soomac_Prototype" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Soomac_Prototype_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Soomac_Prototype_description)/urdf/Soomac_Prototype.trans" />
+<xacro:include filename="$(find Soomac_Prototype_description)/urdf/Soomac_Prototype.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.5609405529495092 -0.031539242834557946 -0.4042188596531417" rpy="0 0 0"/>
+    <mass value="1.5026706265949556"/>
+    <inertia ixx="0.000984" iyy="0.000985" izz="0.001544" ixy="0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component5_1">
+  <inertial>
+    <origin xyz="0.019537413817920957 0.020777063078665836 -0.007182171579352317" rpy="0 0 0"/>
+    <mass value="0.5576419083641209"/>
+    <inertia ixx="0.000276" iyy="0.000138" izz="0.000225" ixy="-1.1e-05" iyz="4.8e-05" ixz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.586999 -0.28625 0.038788" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.586999 -0.28625 0.038788" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component4_1">
+  <inertial>
+    <origin xyz="-0.019835426699677305 0.17517237145956688 4.26723892037878e-06" rpy="0 0 0"/>
+    <mass value="1.061596070256426"/>
+    <inertia ixx="0.015287" iyy="0.00019" izz="0.015309" ixy="8.8e-05" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.586799 0.0155 0.038788" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.586799 0.0155 0.038788" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component3_1">
+  <inertial>
+    <origin xyz="0.019834704656882862 4.621322177695772e-06 0.17517201737629984" rpy="0 0 0"/>
+    <mass value="1.061596070256426"/>
+    <inertia ixx="0.015287" iyy="0.015309" izz="0.00019" ixy="-0.0" iyz="-1e-06" ixz="-8.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.585299 0.0155 0.340538" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.585299 0.0155 0.340538" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component2_1">
+  <inertial>
+    <origin xyz="-0.004855856183574092 -1.539241411352768e-05 0.03917758643767422" rpy="0 0 0"/>
+    <mass value="1.718809170564294"/>
+    <inertia ixx="0.001233" iyy="0.000991" izz="0.001466" ixy="-4e-06" iyz="-1e-06" ixz="5.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.561001 0.030811 0.384809" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.561001 0.030811 0.384809" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Soomac_Prototype_description/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="회전 5" type="continuous">
+  <origin xyz="0.0002 0.30175 0.0" rpy="0 0 0"/>
+  <parent link="Component4_1"/>
+  <child link="Component5_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="회전 6" type="continuous">
+  <origin xyz="0.0015 0.0 0.30175" rpy="0 0 0"/>
+  <parent link="Component3_1"/>
+  <child link="Component4_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="회전 7" type="continuous">
+  <origin xyz="0.024298 0.015311 0.044271" rpy="0 0 0"/>
+  <parent link="Component2_1"/>
+  <child link="Component3_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="회전 8" type="continuous">
+  <origin xyz="0.561001 -0.030811 -0.384809" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component2_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+</robot>
